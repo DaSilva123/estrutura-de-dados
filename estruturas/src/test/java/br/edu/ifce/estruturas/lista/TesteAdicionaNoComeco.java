@@ -8,6 +8,7 @@ public class TesteAdicionaNoComeco {
 		
 		lista.adicionaNoComeco("Rafael");
 		lista.adicionaNoComeco("Paulo");
+		lista.adicionaNoComeco("Roger");
 	
 		System.out.println(lista);
 	}

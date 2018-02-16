@@ -11,16 +11,35 @@ public class Vetor {
 	}
 
 	public void adiciona(int posicao, Aluno aluno) {
-		// implementacao
+		if(!this.posicaoValida(posicao)) {
+			System.out.println("Posiçao Invalida!");
+		}
+		for(int i = this.totalDeAlunos - 1; i >= posicao; i--) {
+			this.alunos[i+1] = this.alunos[i];
+		}
+		this.alunos[posicao] = aluno;
+		this.totalDeAlunos ++;
+	}
+
+	private boolean posicaoValida(int posicao) {
+		
+		 return posicao >= 0 && posicao <= this.totalDeAlunos;
 	}
 
 	public Aluno pega(int posicao) {
-		// implementacao
-		return null;
+		
+ 		return this.alunos[posicao];
+		
 	}
 
+	
+
 	public void remove(int posicao) {
-		// implementacao
+		for(int i = posicao; i < this.totalDeAlunos - 1; i++) {
+			this.alunos[i] = this.alunos[i+1];
+		}
+		
+		this.totalDeAlunos --;
 	}
 
 	public boolean contem(Aluno aluno) {
@@ -33,7 +52,7 @@ public class Vetor {
 	}
 
 	public int tamanho() {
-		return this.totalDeAlunos;
+		return this.totalDeAlunos;	
 	}
 
 	public String toString() {
